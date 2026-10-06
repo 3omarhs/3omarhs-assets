@@ -1,0 +1,84 @@
+import {defaults,build,svg,escapeXML} from './geometry.js';
+import {galleryCategories,mockupModels,mockupVariants,mockupSizes,mockupStyles,dielinePresets,presetState} from './gallery-data.js';
+import {productMockupSVG,exportProductMockup} from './mockups.js';
+import {loadTransparentBrand} from './brand.js';
+import {foldedSceneSVG} from './folding.js';
+import {templates} from './geometry.js';
+import {boxFilters,matchesBoxType} from './box-filters.js';
+
+const $=id=>document.getElementById(id);
+export async function initGalleries(config){
+ let mode='mockups',category='all',query='',sort='featured',page=1,pageSize=24,loaded=50,brand=null,active=null,options={angle:-22,color:null,opening:30};
+ const sizeLabel=document.createElement('label');sizeLabel.className='collection-page-size';sizeLabel.innerHTML='Models per page <select id="collection-page-size"><option>24</option><option>50</option><option>150</option><option>500</option><option value="all">All — load 50 at a time</option></select>';$('collection-result-count').after(sizeLabel);
+ const sentinel=document.createElement('div');sentinel.className='collection-load-more';sentinel.hidden=true;sentinel.innerHTML='<button type="button">Load next 50 models</button>';$('collection-grid').after(sentinel);
+ function loadMore(){if(pageSize!=='all'||loaded>=results().length)return;loaded+=50;render(true);}
+ sentinel.querySelector('button').addEventListener('click',loadMore);
+ const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting))loadMore();},{rootMargin:'0px'});observer.observe(sentinel);
+ $('collection-page-size').addEventListener('change',()=>{pageSize=$('collection-page-size').value==='all'?'all':Number($('collection-page-size').value);page=1;render();});
+ const lookup=new Map(mockupVariants.map(v=>[v.id,v])),byPreset=new Map(dielinePresets.map(v=>[v.id,v]));
+ const typeLabel=document.createElement('label');typeLabel.className='collection-type-filter';typeLabel.innerHTML=`Box type<select id="collection-type-filter">${boxFilters.map(([id,name])=>`<option value="${id}">${name}</option>`).join('')}</select>`;$('collection-model-filter').before(typeLabel);
+ $('collection-type-filter').addEventListener('change',()=>{page=1;renderCategories();render();});
+ const templateFor=v=>mode==='dielines'?v.template:templates.find(t=>v.model.kind==='box'&&t.id===v.model.profile);
+ const nativeFilter=$('collection-model-filter');nativeFilter.hidden=true;
+ const picker=document.createElement('details');picker.className='model-picker';picker.innerHTML='<summary aria-label="Filter by model or structure"><span id="model-picker-label">All models / structures</span><span>⌄</span></summary><div id="model-picker-options" role="listbox" aria-label="Models and structures"></div>';nativeFilter.after(picker);
+ function renderPicker(){
+  const selected=nativeFilter.value;$('model-picker-label').textContent=nativeFilter.selectedOptions[0]?.textContent||'All models / structures';
+  $('model-picker-options').innerHTML=[...nativeFilter.options].map(option=>{let picture='<span class="picker-all">◇</span>';if(option.value!=='all'){if(mode==='mockups'){const v=mockupVariants.find(v=>v.model.id===option.value&&v.sizeIndex===3);picture=productMockupSVG(v,brand,{width:80,height:66,id:`picker-${v.id}`});}else{const p=dielinePresets.find(p=>p.template.id===option.value),s={...presetState(p),w:p.template.w,d:p.template.d,h:p.template.h,lidOpening:['hinged','two-piece','drawer'].includes(p.template.id)?35:0};picture=foldedSceneSVG(s,build(s),{width:80,height:66,compact:true,id:`picker-${p.template.id}`});}}return `<button type="button" role="option" data-model-value="${option.value}" aria-selected="${selected===option.value}"><span class="picker-image">${picture}</span><span>${escapeXML(option.textContent)}</span>${selected===option.value?'<span class="picker-check">✓</span>':''}</button>`;}).join('');
+ }
+ picker.addEventListener('click',e=>{const option=e.target.closest('[data-model-value]');if(!option)return;nativeFilter.value=option.dataset.modelValue;picker.open=false;page=1;renderPicker();render();picker.querySelector('summary').focus();});
+ picker.addEventListener('keydown',e=>{if(e.key==='Escape'){picker.open=false;picker.querySelector('summary').focus();}if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();picker.open=true;const options=[...picker.querySelectorAll('[role="option"]')],current=options.indexOf(document.activeElement);const index=e.key==='Home'?0:e.key==='End'?options.length-1:Math.max(0,Math.min(options.length-1,current+(e.key==='ArrowDown'?1:-1)));options[index]?.focus();}});
+ document.addEventListener('click',e=>{if(!picker.contains(e.target))picker.open=false;});
+ const featured=[];for(let step=0;step<120;step++)mockupModels.forEach((m,i)=>{const size=(Math.floor(step/12)+3)%10,style=mockupStyles[(step+i)%12].id;featured.push(lookup.get(`${m.id}-${size}-${style}`));});
+ function setMode(next){mode=next;category='all';page=1;query='';$('collection-search').value='';document.querySelectorAll('[data-gallery-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.galleryMode===mode);b.setAttribute('aria-selected',b.dataset.galleryMode===mode);});$('collection-title').textContent=mode==='mockups'?'A whole world of branded mockups.':'Your next idea starts with a dieline.';$('collection-description').textContent=mode==='mockups'?`${mockupVariants.length.toLocaleString()} size/style variants from ${mockupModels.length} original base models. Your transparent 3omar.hs logo is placed on every object.`:`${dielinePresets.length.toLocaleString()} dimensional presets across 42 box structures. Pick a starting size, then customize every fold.`;$('collection-search').placeholder=mode==='mockups'?'Search boxes, bottles, T-shirts, devices…':'Search tuck cartons, trays, shipping boxes…';renderCategories();render();}
+ function renderCategories(){
+   const all=mode==='mockups'?featured:dielinePresets;
+   const cats=mode==='mockups'?galleryCategories:[{id:'Cartons',name:'Folding cartons',icon:'◇'},{id:'Trays',name:'Trays, displays & lid boxes',icon:'▱'},{id:'Shipping',name:'Shipping & corrugated',icon:'▣'}];
+   $('collection-categories').innerHTML=[{id:'all',name:'All categories',icon:'✧'},...cats].map(c=>`<button data-category="${c.id}" class="${category===c.id?'active':''}" aria-pressed="${category===c.id}"><span>${c.icon}</span><strong>${c.name}</strong><small>${(c.id==='all'?all.length:all.filter(v=>v.category===c.id).length).toLocaleString()}</small></button>`).join('');
+   const candidates=all.filter(v=>(category==='all'||v.category===category)&&($('collection-type-filter').value==='all'||matchesBoxType(templateFor(v),$('collection-type-filter').value)));
+   const models=[...new Map(candidates.map(v=>mode==='mockups'?[v.model.id,v.model]:[v.template.id,v.template])).values()];
+   $('collection-model-filter').innerHTML='<option value="all">All models / structures</option>'+models.map(m=>`<option value="${m.id}">${m.name}</option>`).join('');
+   renderPicker();
+ }
+ function results(){const model=$('collection-model-filter').value;let items=(mode==='mockups'?featured:dielinePresets).filter(v=>(category==='all'||v.category===category)&&($('collection-type-filter').value==='all'||matchesBoxType(templateFor(v),$('collection-type-filter').value))&&(model==='all'||(mode==='mockups'?v.model.id:v.template.id)===model)&&`${v.name} ${v.category}`.toLowerCase().includes(query));
+   if(sort==='name')items.sort((a,b)=>a.name.localeCompare(b.name));else if(sort==='name-desc')items.sort((a,b)=>b.name.localeCompare(a.name));
+   const size=v=>mode==='dielines'?v.w*v.d*v.h:v.size.factor**2*v.size.ratio;
+   if(['compact','largest'].includes(sort))items.sort((a,b)=>(size(a)-size(b))*(sort==='largest'?-1:1));
+   return items;
+ }
+ function render(append=false){
+   if(!append)loaded=50;
+   const items=results(),allMode=pageSize==='all',pages=allMode?1:Math.max(1,Math.ceil(items.length/pageSize));page=Math.min(page,pages);
+   document.querySelector('.collection-pagination>div').hidden=allMode;
+   $('collection-result-count').textContent=`${items.length.toLocaleString()} ${mode==='mockups'?'mockup variants':'dieline presets'}`;
+   $('collection-page').value=page;$('collection-page').max=pages;$('collection-pages').textContent=`of ${pages.toLocaleString()}`;$('collection-previous').disabled=page===1;$('collection-next').disabled=page===pages;
+   const start=allMode?0:(page-1)*pageSize,end=allMode?Math.min(loaded,items.length):Math.min(page*pageSize,items.length),visible=items.slice(append?Math.max(0,loaded-50):start,end);
+   const markup=visible.length?visible.map(v=>{
+     if(mode==='mockups')return `<article class="collection-card"><button class="collection-art" ${v.model.kind==='box'?`data-studio-mockup="${v.id}"`:`data-mockup="${v.id}"`} aria-label="${v.model.kind==='box'?'Open in Box Studio':'Customize'} ${escapeXML(v.name)}">${productMockupSVG(v,brand,{width:400,height:320,id:`card-${v.id}`})}<span class="collection-badge">MOCKUP</span></button><div class="collection-card-text"><h3>${v.model.name}</h3><p>${v.size.name} · ${v.style.name}</p>${v.model.kind==='box'?`<button data-studio-mockup="${v.id}" class="collection-action">Open in Box Studio ↗</button>`:''}<button data-mockup="${v.id}" class="collection-action">Customize mockup & export ↗</button></div></article>`;
+     const s=presetState(v),g=build(s);return `<article class="collection-card"><button class="collection-art dieline-art" data-preset="${v.id}" aria-label="Customize ${escapeXML(v.name)}"><div class="dieline-card-flat">${svg({...s,labels:false},g,{preview:false,labels:false})}</div><span class="dieline-card-shape">${foldedSceneSVG({...s,lidOpening:s.type==='hinged'?35:0},g,{width:120,height:100,compact:true,id:`preset-${v.id}`})}</span><span class="collection-badge">DIELINE</span></button><div class="collection-card-text"><h3>${v.template.name}</h3><p>${v.w} × ${v.d} × ${v.h} mm</p><div class="collection-card-actions"><button data-preset="${v.id}" class="collection-action">Customize ↗</button><button data-preset-download="${v.id}" aria-label="Download ${escapeXML(v.name)} as SVG">↓ SVG</button></div></div></article>`;
+   }).join(''):'<div class="collection-empty"><h3>No matching designs.</h3><p>Try a different name, category, or model.</p></div>';
+   if(append)$('collection-grid').insertAdjacentHTML('beforeend',markup);else $('collection-grid').innerHTML=markup;
+   sentinel.hidden=!allMode||end>=items.length;
+   $('collection-range').textContent=items.length?`${start+1}–${end} of ${items.length.toLocaleString()}${allMode?' · scroll down to load more':''}`:'0 results';
+ }
+ function renderMockupPreview(){if(!active)return;$('mockup-preview').innerHTML=productMockupSVG(active,brand,{...options,width:1200,height:900,id:'mockup-editor'});$('mockup-color').value=options.color||active.style.color;$('mockup-name').textContent=active.model.name;$('mockup-variant-note').textContent=`${active.size.name} · ${active.style.name} · transparent background`;$('mockup-open-wrap').hidden=active.model.kind!=='box';$('mockup-use-studio').hidden=active.model.kind!=='box';}
+ function updateActive(sizeIndex,styleId){active=lookup.get(`${active.model.id}-${sizeIndex}-${styleId}`);options.color=null;renderMockupPreview();}
+ function openMockup(id){
+   active=lookup.get(id);options={angle:active.model.kind==='box'?-22:0,color:null,opening:['hinged-box','lid-base','drawer-box'].includes(active.model.id)?30:0};
+   config.onDialog('Make this mockup yours.',`<div class="mockup-layout"><div><div id="mockup-preview" class="mockup-preview"></div><p class="field-note">Original vector model · ${active.model.kind==='box'?'3D panel projection':'illustrative product rendering'} · logo embedded on the object</p></div><div class="mockup-controls"><h3 id="mockup-name"></h3><p id="mockup-variant-note"></p><label>Size treatment<select id="mockup-size">${mockupSizes.map((s,i)=>`<option value="${i}" ${i===active.sizeIndex?'selected':''}>${s.name}</option>`).join('')}</select></label><label>Material / color style<select id="mockup-style">${mockupStyles.map(s=>`<option value="${s.id}" ${s.id===active.style.id?'selected':''}>${s.name}</option>`).join('')}</select></label><label>Object color<input id="mockup-color" type="color" value="${active.style.color}"></label><label>Presentation angle<input id="mockup-angle" type="range" min="-60" max="60" value="${options.angle}"></label><label id="mockup-open-wrap">Closed → Open → Flat<input id="mockup-opening" type="range" min="0" max="100" value="${options.opening}"></label><label class="mockup-upload">Use your own artwork<input id="mockup-art-file" type="file" accept="image/png,image/jpeg,image/webp"></label><button id="mockup-reset-brand" class="text-button">Restore 3omar.hs logo</button><label>Download format<select id="mockup-format"><option value="png">PNG — transparent background</option><option value="svg">SVG — scalable, transparent</option><option value="jpg">JPG — white background</option><option value="psd">PSD — transparent raster layer</option></select></label><button id="mockup-download" class="button primary">↓ Download mockup</button><button id="mockup-use-studio" class="button dark">Customize this box dieline ↗</button><small class="field-note">1600 × 1200 image exports. SVG stays scalable. These are original illustrative models, not scanned assets.</small></div></div>`);
+   $('info-dialog').classList.add('mockup-dialog');renderMockupPreview();
+   $('mockup-size').addEventListener('change',()=>updateActive(Number($('mockup-size').value),$('mockup-style').value));$('mockup-style').addEventListener('change',()=>updateActive(Number($('mockup-size').value),$('mockup-style').value));
+   for(const [id,key] of [['mockup-color','color'],['mockup-angle','angle'],['mockup-opening','opening']])$(id).addEventListener('input',()=>{options[key]=key==='color'?$(id).value:Number($(id).value);renderMockupPreview();});
+   $('mockup-art-file').addEventListener('change',async()=>{try{const file=$('mockup-art-file').files[0];if(!file)return;brand=await config.readImage(file);renderMockupPreview();render();config.onNotice('Artwork placed locally on the mockup.');}catch(e){config.onNotice(e.message);}});
+   $('mockup-reset-brand').addEventListener('click',async()=>{brand=await loadTransparentBrand();renderMockupPreview();render();});
+   $('mockup-download').addEventListener('click',async()=>{const button=$('mockup-download');button.disabled=true;button.textContent='Preparing your mockup…';try{config.beforeMockupExport?.(active,brand,options);await exportProductMockup(active,brand,options,$('mockup-format').value);config.onNotice('Mockup downloaded. PNG, SVG and PSD preserve transparency; JPG has a white background.');}catch(e){config.onNotice(e.message);}finally{button.disabled=false;button.textContent='↓ Download mockup';}});
+   $('mockup-use-studio').addEventListener('click',()=>{$('info-dialog').close();config.onUseBoxMockup(active,brand,options);});
+ }
+ $('info-dialog').addEventListener('close',()=>$('info-dialog').classList.remove('mockup-dialog'));
+ $('collection-grid').addEventListener('click',e=>{const studio=e.target.closest('[data-studio-mockup]'),m=e.target.closest('[data-mockup]'),p=e.target.closest('[data-preset]'),d=e.target.closest('[data-preset-download]');if(studio)config.onUseBoxMockup(lookup.get(studio.dataset.studioMockup),brand,{});else if(m)openMockup(m.dataset.mockup);else if(p)config.onUseDieline(byPreset.get(p.dataset.preset));else if(d)config.onDownloadDieline(byPreset.get(d.dataset.presetDownload));});
+ $('collection-categories').addEventListener('click',e=>{const button=e.target.closest('[data-category]');if(!button)return;category=button.dataset.category;page=1;renderCategories();render();});
+ $('collection-search').addEventListener('input',()=>{query=$('collection-search').value.trim().toLowerCase();page=1;render();});$('collection-model-filter').addEventListener('change',()=>{page=1;render();});$('collection-sort').addEventListener('change',()=>{sort=$('collection-sort').value;page=1;render();});
+ $('collection-previous').addEventListener('click',()=>{page--;render();$('collections').scrollIntoView({block:'start'});});$('collection-next').addEventListener('click',()=>{page++;render();$('collections').scrollIntoView({block:'start'});});$('collection-page').addEventListener('change',()=>{page=Math.max(1,Math.floor(Number($('collection-page').value)||1));render();});
+ setMode(config.mode==='dielines'?'dielines':'mockups');
+ try{brand=await loadTransparentBrand();document.querySelectorAll('.logo-crop img').forEach(img=>img.src=brand.art);renderPicker();render();}catch(e){config.onNotice(e.message);}
+ return {render};
+}
