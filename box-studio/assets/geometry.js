@@ -25,7 +25,7 @@ export const templates = [
  ...extendedTemplates
 ];
 export const materials={white:'#f4f0e8',kraft:'#c8a678',sage:'#a9bca5',lavender:'#c4bce4'};
-export const defaults={type:'straight',w:80,d:50,h:120,glue:12,safe:3,unit:'mm',material:'white',labels:true,guides:false,art:null,artName:'',artWidth:0,artHeight:0,target:'front',fit:'contain',scale:100,ax:0,ay:0,rotate:0,sheetLimit:false,sheetW:420,sheetH:297,allowRotate:true,thickness:.4,sizeMode:'manufacture',stock:'custom',tuck:0,dust:0,chamfer:0,lidClearance:2,header:0,lidOpening:0,objectColor:null};
+export const defaults={type:'straight',w:80,d:50,h:120,glue:12,safe:3,unit:'mm',material:'white',labels:true,guides:false,art:null,artName:'',artWidth:0,artHeight:0,target:'front',fit:'contain',scale:100,ax:0,ay:0,rotate:0,scene:'studio',sheetLimit:false,sheetW:420,sheetH:297,allowRotate:true,thickness:.4,sizeMode:'manufacture',stock:'custom',tuck:0,dust:0,chamfer:0,lidClearance:2,header:0,lidOpening:0,objectColor:null};
 export const stocks=[{id:'custom',name:'Custom material',thickness:null},{id:'paperboard',name:'Paperboard · 0.4 mm preset',thickness:.4},{id:'heavy-board',name:'Heavy paperboard · 0.7 mm preset',thickness:.7},{id:'e-flute',name:'E-flute · 1.5 mm preset',thickness:1.5},{id:'b-flute',name:'B-flute · 3 mm preset',thickness:3},{id:'c-flute',name:'C-flute · 4 mm preset',thickness:4}];
 export const units={mm:1,cm:10,in:25.4};
 export const fmt=n=>Number(n.toFixed(2)).toString();
