@@ -1,0 +1,810 @@
+[
+  {
+    "file": "agar/virus_spike.png",
+    "bytes": 5848,
+    "sha256": "8ce0e20720fd2f04d9ba21df293fcb1c6cdc93e9d70b0a2c3f9fafec2ef79f65",
+    "source": "https://3omarhs.com/services/arcade/assets/images/agar/virus_spike.png"
+  },
+  {
+    "file": "bottles_match/bottle_amethyst.png",
+    "bytes": 1794,
+    "sha256": "bd5c7cd4d1469c1e143bbed4d51bd98ed5be6e47c4873bc37bf228fa0cdbd908",
+    "source": "https://3omarhs.com/services/arcade/assets/images/bottles_match/bottle_amethyst.png"
+  },
+  {
+    "file": "bottles_match/bottle_cherry.png",
+    "bytes": 1808,
+    "sha256": "0459d523b83da26d5d9e8d6c320b90046b78da4a9cedb108eefb63165515ac5f",
+    "source": "https://3omarhs.com/services/arcade/assets/images/bottles_match/bottle_cherry.png"
+  },
+  {
+    "file": "bottles_match/bottle_honey.png",
+    "bytes": 1820,
+    "sha256": "442ccd0ad91d7b606a8330ff152b30eeaf35988e012a888ee1b2c74a3bd4f2b8",
+    "source": "https://3omarhs.com/services/arcade/assets/images/bottles_match/bottle_honey.png"
+  },
+  {
+    "file": "bottles_match/bottle_mana.png",
+    "bytes": 2306,
+    "sha256": "fba4f67698b1cf57c06c12c9d63bc01aae4cd59a036272370e4b59a39ab5f522",
+    "source": "https://3omarhs.com/services/arcade/assets/images/bottles_match/bottle_mana.png"
+  },
+  {
+    "file": "bottles_match/bottle_poison.png",
+    "bytes": 3469,
+    "sha256": "791469743646d07a5d07d6f33e900be06815b1316dd58e6697bce25ba04896ab",
+    "source": "https://3omarhs.com/services/arcade/assets/images/bottles_match/bottle_poison.png"
+  },
+  {
+    "file": "bottles_match/bottle_rainbow.png",
+    "bytes": 2299,
+    "sha256": "40807cf12432277d00af43b7da138f513d84856fa5904755227ebe3b8ddbc89f",
+    "source": "https://3omarhs.com/services/arcade/assets/images/bottles_match/bottle_rainbow.png"
+  },
+  {
+    "file": "breakout/ball.png",
+    "bytes": 1627,
+    "sha256": "b4aa755daa2fde65d1c074032f62c24f3a7a18801f9655cc8f2da121531b2ff0",
+    "source": "https://3omarhs.com/services/arcade/assets/images/breakout/ball.png"
+  },
+  {
+    "file": "breakout/paddle.png",
+    "bytes": 1264,
+    "sha256": "695112ece1c7cfee53df60f58e815db09eb84e8253485301fed4c1f2c4e72c41",
+    "source": "https://3omarhs.com/services/arcade/assets/images/breakout/paddle.png"
+  },
+  {
+    "file": "color_sort/tube_cork.png",
+    "bytes": 869,
+    "sha256": "19297d20632e1852893b0853e65f53a18d85ccb0152d34fb0de968f1e3e1ad8e",
+    "source": "https://3omarhs.com/services/arcade/assets/images/color_sort/tube_cork.png"
+  },
+  {
+    "file": "color_sort/tube_empty.png",
+    "bytes": 2178,
+    "sha256": "fcd49e4fe2e289a2e2407566428cd34b6955a78bf8368cb2f21124e3671b3d42",
+    "source": "https://3omarhs.com/services/arcade/assets/images/color_sort/tube_empty.png"
+  },
+  {
+    "file": "digging_jim/boulder.png",
+    "bytes": 5861,
+    "sha256": "b61c76272f8a7b169e4b20ba54d77cc981717c48b949081835907a83681c134c",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/boulder.png"
+  },
+  {
+    "file": "digging_jim/brick.png",
+    "bytes": 4643,
+    "sha256": "213d66110eddf4ef94e5fbd225498c4a7dcfeb370184076b2269d4ad69041336",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/brick.png"
+  },
+  {
+    "file": "digging_jim/bug.png",
+    "bytes": 817,
+    "sha256": "75ef98541a0a0233d1186e74c95eaad675df3351ef27310d8db7b2c8b3a3d5aa",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/bug.png"
+  },
+  {
+    "file": "digging_jim/diamond.png",
+    "bytes": 6189,
+    "sha256": "839e2fe1be0f362591e28799a50f379c25eb89dbdba290e8e0539f6edfad7416",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/diamond.png"
+  },
+  {
+    "file": "digging_jim/dirt.png",
+    "bytes": 4205,
+    "sha256": "ed6ebc16af4da30debdc1514fa28256d2ce63477bb5bce2d913e32e340ba0c01",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/dirt.png"
+  },
+  {
+    "file": "digging_jim/door.png",
+    "bytes": 651,
+    "sha256": "f912508f33a841b2a772113ee84228c14c7dbecd9f5dc2e6ac2b1f4f378ec266",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/door.png"
+  },
+  {
+    "file": "digging_jim/jim.png",
+    "bytes": 6081,
+    "sha256": "75872c558ed04edfbf0565076ac710f5bb812f9e13b6b9b36156c8d882399285",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/jim.png"
+  },
+  {
+    "file": "digging_jim/steel.png",
+    "bytes": 2885,
+    "sha256": "211af837c63438f84df24378925416f1262acfc80a4763baa24e11f0d911d885",
+    "source": "https://3omarhs.com/services/arcade/assets/images/digging_jim/steel.png"
+  },
+  {
+    "file": "draw_line/beaker.png",
+    "bytes": 1873,
+    "sha256": "443478c9cee06bb85ee560a7876084fdc495528100573d218d46551fda7b42d6",
+    "source": "https://3omarhs.com/services/arcade/assets/images/draw_line/beaker.png"
+  },
+  {
+    "file": "draw_line/emitter.png",
+    "bytes": 1514,
+    "sha256": "da1197552b4d63fc087716c7cfcfb68b31ac8403ef4d86e50c7d28ff999fd346",
+    "source": "https://3omarhs.com/services/arcade/assets/images/draw_line/emitter.png"
+  },
+  {
+    "file": "draw_line/portal_blue.png",
+    "bytes": 4249,
+    "sha256": "16e63ff7e67f65518119a61d5261d52e5f013aaf34c0e549f988c161c96fa920",
+    "source": "https://3omarhs.com/services/arcade/assets/images/draw_line/portal_blue.png"
+  },
+  {
+    "file": "draw_line/portal_orange.png",
+    "bytes": 5036,
+    "sha256": "bfa88937bec0d890483bad6e7fba2f7bc01a7bcbc88a50517ee4ee24243feee5",
+    "source": "https://3omarhs.com/services/arcade/assets/images/draw_line/portal_orange.png"
+  },
+  {
+    "file": "draw_line/water_drop.png",
+    "bytes": 2103,
+    "sha256": "7afba017cffa933d990fe9f067d8efab08b6cea84bb8c5ebcf6c2e90fc9ecf61",
+    "source": "https://3omarhs.com/services/arcade/assets/images/draw_line/water_drop.png"
+  },
+  {
+    "file": "egg_catching/basket.png",
+    "bytes": 4189,
+    "sha256": "f4cb142861ccee432e20168bb2635f6149ab4cfb30001e5687e8bc350fe555ca",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/basket.png"
+  },
+  {
+    "file": "egg_catching/egg_bomb.png",
+    "bytes": 3514,
+    "sha256": "f58f08226b5eb3eb21be54953581fd8c5a874747c0eabfa4d84017dce95a560d",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/egg_bomb.png"
+  },
+  {
+    "file": "egg_catching/egg_golden.png",
+    "bytes": 4252,
+    "sha256": "06d33bbd11243292777c3b1bb734189575e32374c58d7bba0e053f740aab2892",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/egg_golden.png"
+  },
+  {
+    "file": "egg_catching/egg_rotten.png",
+    "bytes": 3580,
+    "sha256": "e3ecde1329161acf50b8f28eca063ef01d080d1961c24f465a575d06aabe9b82",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/egg_rotten.png"
+  },
+  {
+    "file": "egg_catching/egg_striped.png",
+    "bytes": 2960,
+    "sha256": "ca71d8000cd58a0a4b2992db16e3f407c50d2c935f47d7d2595069bde7391e4b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/egg_striped.png"
+  },
+  {
+    "file": "egg_catching/egg_white.png",
+    "bytes": 3156,
+    "sha256": "39e55f244fd403c6a1d2a0b062c89094804423bdb5c27fc411b023cbc14bbca3",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/egg_white.png"
+  },
+  {
+    "file": "egg_catching/hen.png",
+    "bytes": 6626,
+    "sha256": "e619eeaf2b2aff518742e217dc3b13b83dc69d0b742d3e7283f0bd8d722699e3",
+    "source": "https://3omarhs.com/services/arcade/assets/images/egg_catching/hen.png"
+  },
+  {
+    "file": "flappy/base.png",
+    "bytes": 527,
+    "sha256": "14071625f09dfe20ca03199ad6084e14a405cc114c1f6ce4e0f1db7706f3c8e6",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/base.png"
+  },
+  {
+    "file": "flappy/bg_day.png",
+    "bytes": 6960,
+    "sha256": "3bae799f8baee1fb989be7121bb35577d55b775b3b77350bd95769b060d079f1",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/bg_day.png"
+  },
+  {
+    "file": "flappy/bg_night.png",
+    "bytes": 1633,
+    "sha256": "bc1211d2673ba48f9186dc4cc852d69ab5b2f7fc5aeebd57bdbbf62ee9b68606",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/bg_night.png"
+  },
+  {
+    "file": "flappy/bird_down.png",
+    "bytes": 426,
+    "sha256": "2e55dfc2e735943b923e8fa7a4a85222ffb0701d3f0e53c387200ea823ddad85",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/bird_down.png"
+  },
+  {
+    "file": "flappy/bird_mid.png",
+    "bytes": 424,
+    "sha256": "34ff50b678cd2d2c8b798c8d56d218f30eecebddfe490ac5916fad07b0f2662b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/bird_mid.png"
+  },
+  {
+    "file": "flappy/bird_up.png",
+    "bytes": 427,
+    "sha256": "c1767fc4694bb87f9a1e48e03fecf0f7b50d9d6191cf3154215c9fb9eba13bb1",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/bird_up.png"
+  },
+  {
+    "file": "flappy/pipe_green.png",
+    "bytes": 2622,
+    "sha256": "7d33c70f1e96cf6325f0e762edb5f00136f9d1e481f637ce29d935b63b29c886",
+    "source": "https://3omarhs.com/services/arcade/assets/images/flappy/pipe_green.png"
+  },
+  {
+    "file": "frogger/croc.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/frog_down.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/frog_idle.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/frog_jump.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/frog_left.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/frog_right.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/frog_up.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/golden_fly.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/sacred_gem.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/tile_altar.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/tile_lava.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/tile_lily.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/tile_log.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/tile_stone.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "frogger/tile_water.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "galaxy/boss_ufo.png",
+    "bytes": 5115,
+    "sha256": "130216524666d3a36a429f17ead72ee4f5507efc21c4b9eacd50129e67952de9",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/boss_ufo.png"
+  },
+  {
+    "file": "galaxy/enemy_black.png",
+    "bytes": 4444,
+    "sha256": "a6a8db41016032b9a433ba68b053e9ef2c4b0cff2eff6bcae50ef64d711b4e5e",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/enemy_black.png"
+  },
+  {
+    "file": "galaxy/enemy_blue.png",
+    "bytes": 4095,
+    "sha256": "f14de2d7e128531f2db3c30f487d8bcac406e5e2cfb805fa5957b5bbb9f90f14",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/enemy_blue.png"
+  },
+  {
+    "file": "galaxy/enemy_red.png",
+    "bytes": 5103,
+    "sha256": "84667cc3b51b515e0afb29a1ac5b1deb5e1670d06857799d304e63c6082c89c6",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/enemy_red.png"
+  },
+  {
+    "file": "galaxy/laser_blue.png",
+    "bytes": 764,
+    "sha256": "33acfb1e1fc0a7d247b06bb09dbcf133cd2ee5c637e54f112e40627322b2f267",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/laser_blue.png"
+  },
+  {
+    "file": "galaxy/laser_red.png",
+    "bytes": 709,
+    "sha256": "8c283e16c4df926dd47372304f1a314b881df5a581ec0813591ec4ce717795f4",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/laser_red.png"
+  },
+  {
+    "file": "galaxy/meteor_big.png",
+    "bytes": 3037,
+    "sha256": "c2d7626b18829a3a5c56007940c9494c88effd5ace787ccd91e877e12e04f575",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/meteor_big.png"
+  },
+  {
+    "file": "galaxy/meteor_med.png",
+    "bytes": 1668,
+    "sha256": "42a520d5909237eedb3fc259393460d559b73f91342201ab627c6a196bb6b521",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/meteor_med.png"
+  },
+  {
+    "file": "galaxy/player_ship.png",
+    "bytes": 3916,
+    "sha256": "21800547ff81ef7fc70e8a96237145358551f0719f922ea463febe501580a2bd",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/player_ship.png"
+  },
+  {
+    "file": "galaxy/player_ship2.png",
+    "bytes": 4940,
+    "sha256": "c9fc9281602b9cdc816f93071724329d3968a7252d5411a6f98684a2d35a84ca",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/player_ship2.png"
+  },
+  {
+    "file": "galaxy/starfield.png",
+    "bytes": 15120,
+    "sha256": "ebaf43a316650ae922a625c8ed0df826b1fefdb3a132f6fc14f8f8600975661d",
+    "source": "https://3omarhs.com/services/arcade/assets/images/galaxy/starfield.png"
+  },
+  {
+    "file": "imposter/crewmate_civilian.png",
+    "bytes": 5408,
+    "sha256": "9fa633d61805350e769898968c1b938158423253c06282b4a25ecf0180f43fc9",
+    "source": "https://3omarhs.com/services/arcade/assets/images/imposter/crewmate_civilian.png"
+  },
+  {
+    "file": "imposter/crewmate_imposter.png",
+    "bytes": 5302,
+    "sha256": "698791bb703078171040f0794fdaef622e96e7771edba7a063aa09cc5e95d657",
+    "source": "https://3omarhs.com/services/arcade/assets/images/imposter/crewmate_imposter.png"
+  },
+  {
+    "file": "imposter/emergency_btn.png",
+    "bytes": 5213,
+    "sha256": "e273e6879abd62338c7e73524577c6ea31a57814243ede45e772a79c3a68a317",
+    "source": "https://3omarhs.com/services/arcade/assets/images/imposter/emergency_btn.png"
+  },
+  {
+    "file": "limbo/beartrap.png",
+    "bytes": 1928,
+    "sha256": "1e8db6406dceb9c83f7f8665bc248fc3f720b0dde20b4a7472a574f780fcaa65",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/beartrap.png"
+  },
+  {
+    "file": "limbo/boulder.png",
+    "bytes": 3961,
+    "sha256": "cfa49e44d75ab01cfdf7a8f140bf537c22a986b937278b428814ff7a45b9e975",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/boulder.png"
+  },
+  {
+    "file": "limbo/boy_idle.png",
+    "bytes": 2947,
+    "sha256": "d295f36e1bc2d31e1efe0455df08492520701d65427e30dbce0b757d06535aa1",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/boy_idle.png"
+  },
+  {
+    "file": "limbo/boy_jump.png",
+    "bytes": 3039,
+    "sha256": "0e86b1bca756300d4378a3e885059634a98a6f0f98c710ced1aa4ac22717d280",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/boy_jump.png"
+  },
+  {
+    "file": "limbo/boy_run.png",
+    "bytes": 3157,
+    "sha256": "9d3fb32655c40274c22cdc419c6b03360250d09e4cc9b4670ee519cea556297e",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/boy_run.png"
+  },
+  {
+    "file": "limbo/crate.png",
+    "bytes": 1641,
+    "sha256": "405d0af8730601cac3de66c95dd194ac62485dab277059cb56d3ac839e562b06",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/crate.png"
+  },
+  {
+    "file": "limbo/mist_bg.png",
+    "bytes": 3215,
+    "sha256": "6fe4384aa27fda1cec26f028f28bc23e09d5929c674e12b3cdd670784ff9770b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/mist_bg.png"
+  },
+  {
+    "file": "limbo/saw.png",
+    "bytes": 5018,
+    "sha256": "31546639390b59b5d6e861c8bccdf048e0d99b72d54a87c8d2ac7a030ea2ef51",
+    "source": "https://3omarhs.com/services/arcade/assets/images/limbo/saw.png"
+  },
+  {
+    "file": "mario/bowser.png",
+    "bytes": 716,
+    "sha256": "d44af1e029272a5b6ccb1a7b6ea4415a6063afdaded57b46e853d0603ad73455",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/bowser.png"
+  },
+  {
+    "file": "mario/brick.png",
+    "bytes": 371,
+    "sha256": "cd11167003bdce8feab5033b7685c71bd766202e364272858d9c6f239af6a6b4",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/brick.png"
+  },
+  {
+    "file": "mario/flower.png",
+    "bytes": 439,
+    "sha256": "c4eaf973b79bc7a8cd8961b45a02b03c9a138f9d12683bdfd3010305df96c36b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/flower.png"
+  },
+  {
+    "file": "mario/goomba_crushed.png",
+    "bytes": 404,
+    "sha256": "d40d8eebe78dc759f975313194da2e82645a0b1865fe4d5a87505667075fe960",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/goomba_crushed.png"
+  },
+  {
+    "file": "mario/goomba.png",
+    "bytes": 483,
+    "sha256": "83030c7123895ab85a8d1ff49ff9b4d939b021a9a4fdadedb4016315cf890d0a",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/goomba.png"
+  },
+  {
+    "file": "mario/ground.png",
+    "bytes": 473,
+    "sha256": "566939d2515d71d1e8687387093a0f18d344dd1a1759d881432f6c70938b7190",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/ground.png"
+  },
+  {
+    "file": "mario/koopa_shell.png",
+    "bytes": 467,
+    "sha256": "539ab941387d245d7722716ed72e9e9283d2cf6fb456335568cf9619453743c3",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/koopa_shell.png"
+  },
+  {
+    "file": "mario/koopa.png",
+    "bytes": 586,
+    "sha256": "a26dce32b6930d7b185d6ea542ab221598f7cde396b25d24ff4865a1cba223e4",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/koopa.png"
+  },
+  {
+    "file": "mario/mario_idle.png",
+    "bytes": 541,
+    "sha256": "86b80c3545d793be36d4aa9a30f14fcb0fb6c2cd0ce4899634671d54ed489e58",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/mario_idle.png"
+  },
+  {
+    "file": "mario/mario_jump.png",
+    "bytes": 531,
+    "sha256": "9c925b21ea24d2f37c7bfcf27ee303593e65fc27d0b92b8addfd218d1c2ed981",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/mario_jump.png"
+  },
+  {
+    "file": "mario/mario_walk.png",
+    "bytes": 544,
+    "sha256": "9deaec637041c969ecd05f64c50dadb6f2414d9e5eab33a4d56e6c2638964c5d",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/mario_walk.png"
+  },
+  {
+    "file": "mario/mushroom.png",
+    "bytes": 473,
+    "sha256": "8e2b073ff8a82859b52a638d74f54456c4c7cff5cb31668135022fd809660314",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/mushroom.png"
+  },
+  {
+    "file": "mario/pipe_shaft.png",
+    "bytes": 431,
+    "sha256": "efd722dedf3e60c8562b05f0118cec8d539a7696ee4078467d19874cba217f96",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/pipe_shaft.png"
+  },
+  {
+    "file": "mario/pipe_top.png",
+    "bytes": 442,
+    "sha256": "dee656a3916833812d15c0f8f2b49fa25457910de5a35576f9a2592139c098aa",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/pipe_top.png"
+  },
+  {
+    "file": "mario/question_block.png",
+    "bytes": 484,
+    "sha256": "c9d93103af6d2368b92e54512cab1571892744d5889c813bc3edda9a29133d35",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/question_block.png"
+  },
+  {
+    "file": "mario/super_mario_idle.png",
+    "bytes": 728,
+    "sha256": "bb61b8b83b147ae80ba9b9e3949aa6017d8ccaa30b6efba7c5d3751042ac2ba2",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/super_mario_idle.png"
+  },
+  {
+    "file": "mario/super_mario_jump.png",
+    "bytes": 600,
+    "sha256": "5de2d203c61edd14c7e7cccb51d3df1a82740d681fafb777b6a761d1ed914379",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/super_mario_jump.png"
+  },
+  {
+    "file": "mario/super_mario_walk.png",
+    "bytes": 686,
+    "sha256": "03b99b06549c67167292e35126f92246eb07edec62b78cd4957920305a14090f",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mario/super_mario_walk.png"
+  },
+  {
+    "file": "mob_control/cannon.png",
+    "bytes": 2742,
+    "sha256": "636a475a50d0828b719154230eca3a352349f4a93b75a19e9d291eb8d6b85d8c",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mob_control/cannon.png"
+  },
+  {
+    "file": "mob_control/champion_blue.png",
+    "bytes": 6883,
+    "sha256": "45485375b591c1d82ce6fe3a3a3f76f91e34c278b4f7069fe1d67c595d6409b0",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mob_control/champion_blue.png"
+  },
+  {
+    "file": "mob_control/champion_yellow.png",
+    "error": "HTTP 404"
+  },
+  {
+    "file": "mob_control/mob_blue.png",
+    "bytes": 2667,
+    "sha256": "e03152e7b607a933f6e2aa2c953f4d0448f807a47aff0802e23bea44d89dace2",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mob_control/mob_blue.png"
+  },
+  {
+    "file": "mob_control/mob_red.png",
+    "bytes": 2732,
+    "sha256": "f1fe6e2e7b00919ddc9ff99274798f0f7d870d83b49bd82d1a5aa18de6f6c143",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mob_control/mob_red.png"
+  },
+  {
+    "file": "mob_control/red_fortress.png",
+    "bytes": 2954,
+    "sha256": "c770973b4a23873ce35d0883e5ad6b5a891f200eb8aefdc1633056b5914c5d65",
+    "source": "https://3omarhs.com/services/arcade/assets/images/mob_control/red_fortress.png"
+  },
+  {
+    "file": "pacman/blinky.png",
+    "bytes": 374,
+    "sha256": "cc8086a356383c878ddbd66043ac222a9c6e3d4783c41b059ac7b839882af851",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/blinky.png"
+  },
+  {
+    "file": "pacman/cherry.png",
+    "bytes": 394,
+    "sha256": "0080fc2f2fde3f42b81636d6bf0325b0266b700af7dc5dfeb4a9176df5d62a31",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/cherry.png"
+  },
+  {
+    "file": "pacman/clyde.png",
+    "bytes": 379,
+    "sha256": "8b72eb08d7eac24cf64fa8a867043375a54e565339567f20d1fa7dedf5f1bc1b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/clyde.png"
+  },
+  {
+    "file": "pacman/ghost_scared.png",
+    "bytes": 383,
+    "sha256": "f29010b8aad5b0a3a90a4ae6eabb89196fc7c726e6aacdea55529a44e4f28601",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/ghost_scared.png"
+  },
+  {
+    "file": "pacman/inky.png",
+    "bytes": 364,
+    "sha256": "af1387a123606b6c1197315d83f0293370cb309c9a828ceefbe9511aee0803f2",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/inky.png"
+  },
+  {
+    "file": "pacman/pacman_down.png",
+    "bytes": 388,
+    "sha256": "4de4396f0ed2a80d4f6cf7cb4964bb38279ceaeb80205f77e8f33ab13d3fc977",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/pacman_down.png"
+  },
+  {
+    "file": "pacman/pacman_full.png",
+    "bytes": 402,
+    "sha256": "e799c6fc58c92eea57224cce606a9e160a55a90559f0054789ea9daa1d28a92a",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/pacman_full.png"
+  },
+  {
+    "file": "pacman/pacman_left.png",
+    "bytes": 399,
+    "sha256": "7397778b7d26ea627ccfef4e173da3374b7f152809477d4062793b96a16a4c9d",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/pacman_left.png"
+  },
+  {
+    "file": "pacman/pacman_right.png",
+    "bytes": 386,
+    "sha256": "ee5162790831f13921b932281a6412b552dc8993974675459b2acac446ab67d7",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/pacman_right.png"
+  },
+  {
+    "file": "pacman/pacman_up.png",
+    "bytes": 390,
+    "sha256": "ff8efeb9f3b41aef601ac2ca3de6d47ff987d376f324010642100b02454faa96",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/pacman_up.png"
+  },
+  {
+    "file": "pacman/pinky.png",
+    "bytes": 409,
+    "sha256": "2ecc9458e7430328bb638660fb8179cfa950b48af035bb8a25e7ee6f36f6d7bb",
+    "source": "https://3omarhs.com/services/arcade/assets/images/pacman/pinky.png"
+  },
+  {
+    "file": "paper_io/avatar_bot_red.png",
+    "bytes": 2026,
+    "sha256": "c601b7dcd973541257241952132272cc5f22e65e199eb1a713ce011c524c1f62",
+    "source": "https://3omarhs.com/services/arcade/assets/images/paper_io/avatar_bot_red.png"
+  },
+  {
+    "file": "paper_io/avatar_player.png",
+    "bytes": 1747,
+    "sha256": "69aeb929af98199017a8ee8f0d0aeff7b559b5c167675a8912dfe5f2c1ef884c",
+    "source": "https://3omarhs.com/services/arcade/assets/images/paper_io/avatar_player.png"
+  },
+  {
+    "file": "paper_io/crown.png",
+    "bytes": 1647,
+    "sha256": "09f10ec3adfe922f53f219e840530dc661c638d7c4dac34e1ecdad66663c4e54",
+    "source": "https://3omarhs.com/services/arcade/assets/images/paper_io/crown.png"
+  },
+  {
+    "file": "retro/apple.png",
+    "bytes": 725,
+    "sha256": "bf5a7ec8db10b40b3e77ea89af13a1c7328a52c11873d3ba3bdcdd27417cbdda",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/apple.png"
+  },
+  {
+    "file": "retro/bounce_ball.png",
+    "bytes": 750,
+    "sha256": "05d1f2a4e079e78ce97084fb6b15b6eced81dc2b60966790a346b09293172c70",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/bounce_ball.png"
+  },
+  {
+    "file": "retro/golden_apple.png",
+    "bytes": 721,
+    "sha256": "a5b784275eabe882c9d002caf38d55c09383d015d873a0f35489e0e475dac254",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/golden_apple.png"
+  },
+  {
+    "file": "retro/golden_ring.png",
+    "bytes": 710,
+    "sha256": "be79b45e68cfebf3c8331bffe7243bf0272582e83e2fa16b00382135ca4cfd24",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/golden_ring.png"
+  },
+  {
+    "file": "retro/sniper_reticle.png",
+    "bytes": 2225,
+    "sha256": "42f7011511b6067323460e390362e2fe62e292476036201d311fb5a7c24936ce",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/sniper_reticle.png"
+  },
+  {
+    "file": "retro/spikes.png",
+    "bytes": 561,
+    "sha256": "d77f414f713a71f4a7b413433f70baf2e917e180564ac81441e4e728c9b3e820",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/spikes.png"
+  },
+  {
+    "file": "retro/tetris_blue.png",
+    "bytes": 403,
+    "sha256": "e69fcf38f3d0e0c21c5602401a8a76cf8b0548a70a951b1157a2b2367ea86633",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_blue.png"
+  },
+  {
+    "file": "retro/tetris_cyan.png",
+    "bytes": 399,
+    "sha256": "b58f05a2dd4ccefdd46019e83afb3cbb80b91e4f441a3c027983d5322175b272",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_cyan.png"
+  },
+  {
+    "file": "retro/tetris_green.png",
+    "bytes": 400,
+    "sha256": "715a1006f36e6ecbf99249824bdea9b1805101996a73a5ddd443864d9daf6a4b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_green.png"
+  },
+  {
+    "file": "retro/tetris_orange.png",
+    "bytes": 401,
+    "sha256": "0fc0548e080cb7a920c22a69229b00e659a231084e4e5b79f1a2c1186760a322",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_orange.png"
+  },
+  {
+    "file": "retro/tetris_purple.png",
+    "bytes": 402,
+    "sha256": "677d88c3e9984ba6c412c3f2577631aee6ae6d0c85de31d20b8a6956d694592a",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_purple.png"
+  },
+  {
+    "file": "retro/tetris_red.png",
+    "bytes": 400,
+    "sha256": "0efa8e943579956d4160f5440b9f9e236a078612bfe1851a56e752986a592acd",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_red.png"
+  },
+  {
+    "file": "retro/tetris_yellow.png",
+    "bytes": 398,
+    "sha256": "12ebc725ff40139ac0bc31a314cbbf027cf12eab8eb2d8a4f14521146254011d",
+    "source": "https://3omarhs.com/services/arcade/assets/images/retro/tetris_yellow.png"
+  },
+  {
+    "file": "sand_blast/block_cyan.png",
+    "bytes": 1058,
+    "sha256": "2d6ae3179b326b9ed719bcdbed0beab7c209abe97cc54d82fe2a61930b67727f",
+    "source": "https://3omarhs.com/services/arcade/assets/images/sand_blast/block_cyan.png"
+  },
+  {
+    "file": "sand_blast/block_green.png",
+    "bytes": 1140,
+    "sha256": "983f77e37fcee8f4f9a0b00d446b87f30e4de44664655349e4a4c4c43eff9401",
+    "source": "https://3omarhs.com/services/arcade/assets/images/sand_blast/block_green.png"
+  },
+  {
+    "file": "sand_blast/block_magenta.png",
+    "bytes": 1147,
+    "sha256": "3efa474eb9877d5f2e24ac3b69ff926f1467d8deee4ea7949d877cba8b6c33e5",
+    "source": "https://3omarhs.com/services/arcade/assets/images/sand_blast/block_magenta.png"
+  },
+  {
+    "file": "sand_blast/block_purple.png",
+    "bytes": 1132,
+    "sha256": "ba7b3ba52d5ae29dde63237f778a27604c35ebaf60d31f06d9c838f07b05023b",
+    "source": "https://3omarhs.com/services/arcade/assets/images/sand_blast/block_purple.png"
+  },
+  {
+    "file": "sand_blast/block_yellow.png",
+    "bytes": 1063,
+    "sha256": "5f1af5c5ee22445691ef1884eb02f26e6d103154b873cb17ad6d4a08b6dc341c",
+    "source": "https://3omarhs.com/services/arcade/assets/images/sand_blast/block_yellow.png"
+  },
+  {
+    "file": "shark/fish_blue.png",
+    "bytes": 10264,
+    "sha256": "75f1a31939623e77bc89f97d8d81cf8e6a6cbce4d8c6a57a5ca611e0ff51e4c1",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_blue.png"
+  },
+  {
+    "file": "shark/fish_gray.png",
+    "bytes": 4849,
+    "sha256": "130c1b98c852e60ce37cbbe12bb2bd25a87e87608f8969c3aac30fd298a9179a",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_gray.png"
+  },
+  {
+    "file": "shark/fish_p1.png",
+    "bytes": 132561,
+    "sha256": "f03ebbaaeb78524ea88c411754d51ad5d811be53717a1cf28ca11506f234feae",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_p1.png"
+  },
+  {
+    "file": "shark/fish_p2.png",
+    "bytes": 6610,
+    "sha256": "19c22d51512f249ed00ae8c0768ac68ce44b1e7d3fa779ba0453fe99a897d071",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_p2.png"
+  },
+  {
+    "file": "shark/fish_p3.png",
+    "bytes": 10823,
+    "sha256": "8ddda8c246560cf93f12540f40419379ab4c8eee26c62d203443128c9183c173",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_p3.png"
+  },
+  {
+    "file": "shark/fish_p4.png",
+    "bytes": 29107,
+    "sha256": "e70dcb385f4a67daeb06c557a2ae631af23da9a7f296ac0205d0101d62368461",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_p4.png"
+  },
+  {
+    "file": "shark/fish_small.png",
+    "bytes": 6286,
+    "sha256": "4491a1b8b6528ab118626903841c8da8e2068c83730074d5f8db65d44367aae1",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/fish_small.png"
+  },
+  {
+    "file": "shark/ocean_bg.png",
+    "bytes": 54527,
+    "sha256": "927577cbd285e8a78df8eb77a38fbacca1da027b1002ae4dcbb3fdd3ffc172cf",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/ocean_bg.png"
+  },
+  {
+    "file": "shark/shark_boss.png",
+    "bytes": 41249,
+    "sha256": "03af24fe2ed0d7d39756d5013e5f5e6922964b1dc9925f0080eeb7abdfb8f80e",
+    "source": "https://3omarhs.com/services/arcade/assets/images/shark/shark_boss.png"
+  }
+]

@@ -1,0 +1,65 @@
+name: One-time public media migration
+on:
+  push:
+    paths:
+      - '.github/workflows/migrate-public-media-20261011.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: public-media-migration-20261011
+  cancel-in-progress: false
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout the exact public source asset snapshot
+        run: |
+          git clone --filter=blob:none --no-checkout --depth 1 https://github.com/3omarhs/crtv-rarities-products.git "$RUNNER_TEMP/source-assets"
+          git -C "$RUNNER_TEMP/source-assets" sparse-checkout set public/assets
+          git -C "$RUNNER_TEMP/source-assets" fetch --depth 1 origin ed561a61302bf9e32038797ec1905dd01a87e590
+          git -C "$RUNNER_TEMP/source-assets" checkout --detach ed561a61302bf9e32038797ec1905dd01a87e590
+      - name: Copy media and recover existing live sprites without replacing files
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, shutil, json, hashlib, urllib.request
+          from concurrent.futures import ThreadPoolExecutor
+          source = pathlib.Path(os.environ['RUNNER_TEMP']) / 'source-assets/public/assets'
+          target = pathlib.Path('public/assets')
+          files = [p for p in source.rglob('*') if p.is_file()]
+          assert len(files) == 457, 'Unexpected source asset count'
+          for file in files:
+              assert not file.is_symlink(), 'Symlink is not a media file'
+              dest = target / file.relative_to(source)
+              dest.parent.mkdir(parents=True, exist_ok=True)
+              if dest.exists():
+                  assert dest.read_bytes() == file.read_bytes(), 'Asset conflict: ' + str(dest)
+              else:
+                  shutil.copyfile(file, dest)
+          sprites = json.loads(pathlib.Path('.github/migration/arcade-recovery-20261011.json').read_text())
+          def recover(entry):
+              dest = pathlib.Path('arcade/images') / entry['file']
+              if 'error' in entry:
+                  assert dest.is_file(), 'Generated replacement missing: ' + str(dest)
+                  return
+              if not dest.exists():
+                  data = urllib.request.urlopen(entry['source'], timeout=30).read()
+                  assert hashlib.sha256(data).hexdigest() == entry['sha256'], 'Live sprite changed: ' + entry['file']
+                  dest.parent.mkdir(parents=True, exist_ok=True)
+                  dest.write_bytes(data)
+              assert hashlib.sha256(dest.read_bytes()).hexdigest() == entry['sha256'], 'Sprite integrity mismatch'
+          with ThreadPoolExecutor(max_workers=8) as executor:
+              list(executor.map(recover, sprites))
+          png = bytes([137,80,78,71,13,10,26,10])
+          for entry in sprites:
+              assert (pathlib.Path('arcade/images') / entry['file']).read_bytes().startswith(png)
+          print('Verified 457 unchanged media files and 140 complete arcade sprite PNGs.')
+          PY
+      - name: Publish the requested migrated assets
+        run: |
+          git add -- public/assets arcade/images
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit --quiet -m 'Migrate 457 public media files and recover 124 live arcade sprites'
+          git push origin HEAD:main
