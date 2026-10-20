@@ -1,0 +1,2 @@
+# Public broadcast directory snapshot
+Source: iptv-org public API, https://github.com/iptv-org/iptv and https://github.com/iptv-org/database . Snapshot2026-10-21. Includes identified, non-adult, not-closed channels with public HTTP/HTTPS streams that do not require custom headers. URLs belong to their broadcasters. A directory listing is not a guarantee of playback, regional availability or redistribution rights.
