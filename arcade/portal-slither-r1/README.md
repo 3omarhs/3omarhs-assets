@@ -1,0 +1,2 @@
+# Portal Slither art
+Original raster art generated with the built-in image tool. Twelve transparent sprite cells extracted by alpha bounds, plus a blue snowy scene and illustrated cover. Prompts requested an original expressive yellow/charcoal segmented worm, beveled wooden obstacles, red apples, dark portal and spikes. Reference gameplay layout is implemented in independent application code. No third-party sprites or game code used.
